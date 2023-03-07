@@ -1,0 +1,24 @@
+name: API testing demo project
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build Server
+      run: |
+        docker build -t posts-api .
+        docker run -d -p 8000:80 posts-api
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.11.1
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Run tests
+      run: |
+        python -B -m pytest -vv -s
