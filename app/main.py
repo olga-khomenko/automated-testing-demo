@@ -43,7 +43,7 @@ def find_post(uid):
 @app.get('/posts/{uid}', responses={404: {'description': 'Post not found!'}})
 async def get_post(uid: int):
     post = find_post(uid)
-    return {'data': post}
+    return post
 
 
 @app.get('/posts')
@@ -55,7 +55,7 @@ async def get_posts():
 async def create_post(new_post: Post):
     new_post.id = posts[-1].id + 1
     posts.append(new_post)
-    return {'data': new_post}
+    return new_post
 
 
 @app.put('/posts/{uid}', responses={404: {'description': 'Post not found!'}})
@@ -63,7 +63,7 @@ async def update_post(uid: int, update_data: Post):
     post = find_post(uid=uid)
     for post_key in post.__dict__.keys():
         setattr(post, post_key, getattr(update_data, post_key))
-    return {'data': post}
+    return post
 
 
 @app.delete('/posts/{uid}', status_code=status.HTTP_204_NO_CONTENT, responses={404: {'description': 'Post not found!'}})
