@@ -7,9 +7,7 @@ It is implements:
 - simple set of API CRUD tests plus some extras
 - GitHub Actions integration (building server and running tests)
 
-############################################################################
-SERVER
-############################################################################
+### SERVER
 
 Run server from terminal:
 > uvicorn main:app --host 0.0.0.0 --port 8000 --reload
@@ -33,6 +31,11 @@ To start API server:
 To stop API server:
 > docker-compose down
 
-############################################################################
-TESTS
-############################################################################
+### TESTS
+
+Assuming you have Python 3.11 installed:
+
+To run tests in terminal:
+> python -m pytest -vv -s
+
+you can also add the `--log-cli-level=INFO (DEBUG)` parameter to print logs to console
