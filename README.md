@@ -42,4 +42,4 @@ you can also add the `--log-cli-level=INFO (DEBUG)` parameter to print logs to c
 
 ### Continuous Integration
 
-Check GH `Actions` tab to see CI jobs.
+Check GH [Actions](https://github.com/olga-khomenko/automated-testing-demo/actions) tab to see CI jobs.
