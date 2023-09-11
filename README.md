@@ -1,11 +1,11 @@
 # Automated Testing Demo Project
-Project that can showcase my proficiency in Pythong development, automated testing, Docker and continuous integration. 
+Project that can showcase my proficiency in Python development, automated testing, Docker and continuous integration. 
 
-It is implements:
+It implements:
 - backend server with Fast API
 - dockerizing  Fast API server app
 - simple set of API CRUD tests plus some extras
-- GitHub Actions integration (building server and running tests)
+- GitHub Actions integration (CI - building server and running tests)
 
 ### Server
 
